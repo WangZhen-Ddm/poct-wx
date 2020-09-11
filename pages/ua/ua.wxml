@@ -1,0 +1,2 @@
+<!--pages/ua/ua.wxml-->
+<canvas canvas-id="lineCanvas" disable-scroll="true" style="width:{{windowWidth}}px;height:{{windowHeight}}px;" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>

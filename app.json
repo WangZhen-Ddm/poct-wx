@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/homepage/homepage",
+    "pages/admin/index/index",
+    "pages/admin/homepage/homepage",
+    "pages/userinfo/userinfo",
+    "pages/setting/setting",
+    "pages/center/center",
+    "pages/bg/bg",
+    "pages/ua/ua"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "POCT检测服务平台",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#3e9afe",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/homepage_fill.png",
+        "iconPath": "images/homepage.png",
+        "pagePath": "pages/homepage/homepage",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/mine_fill.png",
+        "iconPath": "images/mine.png",
+        "pagePath": "pages/setting/setting",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,14 @@
+<!--pages/userinfo/userinfo.wxml-->
+<view class="container">
+    <view class="title">患者基本信息</view>
+    <view class="item">姓名/性别/年龄</view>
+    <view class="detail">{{userinfo.name}}|{{userinfo.sex}}|{{userinfo.age}}</view>
+    <view class="item">患者ID号码</view>
+    <view class="detail">{{userinfo.patientID}}</view>
+    <view class="item">身高（cm）|体重（kg）</view>
+    <view class="detail">{{userinfo.height}}|{{userinfo.weight}}</view>
+    <view class="item">证件号码</view>
+    <view class="detail">{{userinfo.identityCardNumber}}</view>
+    <view class="item">手机号码</view>
+    <view class="detail">{{userinfo.phoneNumber}}</view>
+</view>

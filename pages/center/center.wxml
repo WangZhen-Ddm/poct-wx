@@ -1,0 +1,26 @@
+<!--pages/center/center.wxml-->
+<view class="container">
+    <view class="top_border">
+        <image src="../../images/center.png" class="center_png" mode="aspectFit" />
+        <view class="detail">浙江省智能诊疗设备制造业创新中心是浙江省围绕着“中国制造 2025”国家战略首批成立的三家省级制造业创新中心之一。</view>
+        <view class="detail">创新中心坐落于杭州市余杭区“中国人工智能小镇”核心区域，首期投入使用10000平方米的研发场地，后期扩至30000平方米，并规划200亩科研用地，供产业化公司发展。</view>
+        <view class="detail">创新中心以浙江大学为牵头单位，结合高校、研究机构和龙头企业一起开展行业关键技术的研发，旨在提升浙江省只能诊疗设备制造业的创新能力，培养产业创新人才，孵化创新创业企业，打造创新生态系统。</view>
+    </view>
+    <view class="mid_border">
+        <view class="info">
+            <image src="../../images/test.png" class="info_png" mode="aspectFit" />
+            <view >POCT检测</view>
+            <view class="tail">及时、准确、迅速</view>
+        </view>
+        <view class="info">
+            <image src="../../images/product.png" class="info_png" mode="aspectFit" />
+            <view >仪器设计与制造</view>
+            <view class="tail">生物医学传感器研发</view>
+        </view>
+        <view class="info">
+            <image src="../../images/data.png" class="info_png" mode="aspectFit" />
+            <view >大数据</view>
+            <view class="tail">健康数据云平台</view>
+        </view>
+    </view>
+</view>

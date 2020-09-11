@@ -1,0 +1,19 @@
+/* pages/userinfo/userinfo.wxss */
+.title {
+    font-size: 56rpx;
+    font-weight: bold;
+    margin-left: 80rpx;
+    margin-top: 60rpx;
+}
+
+.item {
+    margin-top: 60rpx;
+    font-weight: lighter;
+    font-size: 30rpx;
+    margin-left: 80rpx;
+}
+
+.detail {
+    margin-left: 80rpx;
+    font-size: 44rpx;
+}

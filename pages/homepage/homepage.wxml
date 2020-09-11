@@ -1,0 +1,40 @@
+<!--pages/homepage/homepage.wxml-->
+<view class="container">
+    <view class="top-info">
+        <image src="../../images/people.png" mode="aspectFit" class="people" />
+        <view class="top-detail">
+            <view>ID：{{userinfo.patientID}}</view>
+            <view>患者：{{userinfo.name}}</view>
+            <view>年龄：{{userinfo.age}}</view>
+            <view>性别：{{userinfo.sex}}</view>
+        </view>
+    </view>
+    <image src="../../images/homepage_basic.png" mode="aspectFit" class="basic" />
+    <view bindtap="gotoUserinfo" class="show_info" hover-class='wsui-btn__hover_list' hover-stay-time="3000">查看个人信息</view>
+    <image src="../../images/test_png.png" mode="aspectFit" class="basic test" />
+    <view class="result_title">检测指标结果查询</view>
+    <view class="result_box">
+        <view>
+            <image src="../../images/glu.png" mode="aspectFit" class="result_img" />
+            <view class="result_item">血糖</view>
+        </view>
+        <view bindtap="gotoUA">
+            <image src="../../images/ua.png" mode="aspectFit" class="result_img" />
+            <view class="result_item">尿酸</view>
+        </view>
+        <view>
+            <image src="../../images/yingguang.png" mode="aspectFit" class="result_img" />
+            <view class="result_item">免疫荧光</view>
+        </view>
+    </view>
+    <view class="about_title">
+        <view class="result_title" style="margin-top:0; margin-left:0;">关于我们</view>
+        <view style="color:#A6A6A7">浙江省创新创业设备诊疗中心</view>
+    </view>
+    <view class="about_img_list">
+        <image src="../../images/img1.png" class="about_img" mode="aspectFit" bindtap="gotoCenter" />
+        <image src="../../images/img2.png" class="about_img" mode="aspectFit" bindtap="gotoCenter" />
+        <image src="../../images/img3.png" class="about_img" mode="aspectFit" bindtap="gotoCenter" />
+    </view>
+</view>
+
