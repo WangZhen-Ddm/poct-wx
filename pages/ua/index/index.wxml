@@ -1,0 +1,17 @@
+<!--pages/ua/index/index.wxml-->
+<view class='container'>
+    <view class="title">尿酸历史记录</view>
+    <view wx:for="{{uas.ua}}" wx:for-item="item" wx:key="index" class='record-item-history'>
+        <view class='history-date'>
+            <view class='history-day'>{{uas.date[index]}}</view>
+            <view class='history-time'>{{uas.time[index]}}</view>
+        </view>
+        <view class='history-bp'>
+            <view class="history-data">
+            <text>{{item}}</text>
+            </view>
+            <view class='history-unit'>umol/L</view>
+        </view>
+    </view>
+  <button class='bp-chart-btn' bindtap='gotoChart' >查看血压图表详情</button>
+</view>

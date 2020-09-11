@@ -61,7 +61,7 @@ Page({
 
   gotoUA() {
     wx.navigateTo({
-      url: '../ua/ua?patientID=' + this.data.patientID + '&&sex=' + this.data.userinfo.sex,
+      url: '../ua/index/index?patientID=' + this.data.patientID + '&&sex=' + this.data.userinfo.sex,
     })
   },
 

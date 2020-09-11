@@ -15,6 +15,19 @@ Page({
 
   },
 
+  gotoUser() {
+    wx.showToast({
+      title:'功能暂未开放，敬请期待！'
+    })
+  },
+
+  quit() {
+    wx.clearStorage();
+    wx.reLaunch({
+      url: '../index/index',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

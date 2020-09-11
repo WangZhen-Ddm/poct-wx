@@ -1,0 +1,5 @@
+/* pages/start/start.wxss */
+.start_png {
+    height: 100vh;
+    width: 100vw;
+}

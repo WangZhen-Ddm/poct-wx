@@ -50,6 +50,8 @@ Page({
         if(res.statusCode==200) {
           wx.setStorageSync("token", res.header.Authorization);
           wx.setStorageSync("patientID", username);
+          wx.setStorageSync("password", password);
+          wx.setStorageSync("role", 1);//权限,1-患者，2-医生
           wx.switchTab({
             url:'../homepage/homepage',
           })
@@ -90,6 +92,18 @@ Page({
         app.globalData.windowHeight = res.windowHeight;
       }
     });
+    let role = wx.getStorageSync("role");
+    if(role==1) {
+      var username = wx.getStorageSync("patientID");
+      var password = wx.getStorageSync("password");
+      this.setData({
+        username,
+        password,
+      });
+      if(username) {
+        this.login();
+      }
+    }
   },
 
   /**

@@ -1,0 +1,2 @@
+<!--pages/start/start.wxml-->
+<image src="../../images/start.png" mode="aspectFit" class="start_png" />

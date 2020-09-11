@@ -38,5 +38,7 @@ App({
     //system info
     windowWidth: 375,
     windowHeight: 667,
+    //权限,0-患者,1-医生/管理员
+    //role:0,
   }
 })
