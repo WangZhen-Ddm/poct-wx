@@ -10,7 +10,9 @@
     "pages/center/center",
     "pages/bg/bg",
     "pages/ua/ua",
-    "pages/ua/index/index"
+    "pages/ua/index/index",
+    "pages/flu/index/index",
+    "pages/flu/flu"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,6 +30,12 @@
         "iconPath": "images/homepage.png",
         "pagePath": "pages/homepage/homepage",
         "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/homepage_fill.png",
+        "iconPath": "images/homepage.png",
+        "pagePath": "pages/admin/homepage/homepage",
+        "text": "管理员"
       },
       {
         "selectedIconPath": "images/mine_fill.png",

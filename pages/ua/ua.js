@@ -60,7 +60,7 @@ Page({
     }
     let {uaTopGoal, uaLowGoal} = this.data;
     chartsdate.categories = uas.map(function (item) {
-      chartsdate.ua.push(item.uricAcid.toFixed(3)*1000);
+      chartsdate.ua.push((1000*item.uricAcid).toFixed(3));
       chartsdate.uaColor.push(item.uricAcid>uaTopGoal||item.uricAcid<uaLowGoal ? '#FF4500': '#666666');
       return formatTime6(item.measureDateTime)
     })

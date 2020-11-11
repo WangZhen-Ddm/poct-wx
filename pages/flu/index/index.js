@@ -1,8 +1,8 @@
-const { patientGetUricAcidRecordsByTimeGapUrl } = require("../../../utils/config");
+const { patientGetFluRecordsByTimeGapUrl } = require("../../../utils/config");
 const { formatTime } = require("../../../utils/util");
 const { tokenRequest } = require("../../../utils/http");
 
-// pages/ua/index/index.js
+// pages/flu/index/index.js
 Page({
 
   /**
@@ -12,8 +12,8 @@ Page({
 
   },
 
-  getUricAcidRecordsByTimeGap() {
-    let url = patientGetUricAcidRecordsByTimeGapUrl;
+  getFluRecordsByTimeGap() {
+    let url = patientGetFluRecordsByTimeGapUrl;
     const now = new Date();
     const startTime = formatTime(new Date(now.getTime() - 300 * 24 * 3600000));
     const endTime = formatTime(new Date(now.getTime() + 24 * 3600000));
@@ -23,20 +23,20 @@ Page({
       endTime,
     }
     const that = this;
-    var uas = {
+    var flus = {
       date: [],
       time: [],
-      ua: []
+      flu: []
     }
     tokenRequest({url, data}).then(res=>{
       let r = res.data.result;
       r.map(function(item) {
-        uas.date.push(item.measureDateTime.split(" ")[0]);
-        uas.time.push(item.measureDateTime.split(" ")[1]);
-        uas.ua.push((1000*item.uricAcid).toFixed(3))
+        flus.date.push(item.measureDateTime.split(" ")[0]);
+        flus.time.push(item.measureDateTime.split(" ")[1]);
+        flus.flu.push(item.fluorescent)
       })
       that.setData({
-        uas,
+        flus,
       })
     })
   },
@@ -49,13 +49,7 @@ Page({
       patientID: options.patientID,
       sex: options.sex,
     });
-    this.getUricAcidRecordsByTimeGap();
-  },
-
-  gotoChart() {
-    wx.navigateTo({
-      url: '../ua?patientID=' + this.data.patientID + '&&sex=' + this.data.sex,
-    })
+    this.getFluRecordsByTimeGap();
   },
 
   /**

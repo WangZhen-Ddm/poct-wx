@@ -1,4 +1,10 @@
 // pages/admin/homepage/homepage.js
+import {
+  getPatientInfoListUrl
+} from "../../../utils/config";
+import {
+  tokenRequest,
+} from "../../../utils/http";
 Page({
 
   /**
@@ -8,11 +14,42 @@ Page({
 
   },
 
+  getPatientInfoList() {
+    const url = getPatientInfoListUrl;
+    const data = []
+    const that = this;
+    tokenRequest({url, data}).then(res=>{
+      if(res.data.success) {
+        let result = res.data.result;
+        that.setData({
+          patientList: result,
+        })
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const role = wx.getStorageSync("role");
+    var hasRole;
+    if(role==1) {
+      hasRole = false;
+    } else {
+      hasRole = true;
+      this.getPatientInfoList();
+    }
+    this.setData({
+      hasRole,
+    })
+  },
+  
+  gotoPatient(e) {
+    wx.setStorageSync("patientID", e.currentTarget.dataset.patient);
+    wx.switchTab({
+      url: "../../homepage/homepage"
+    })
   },
 
   /**

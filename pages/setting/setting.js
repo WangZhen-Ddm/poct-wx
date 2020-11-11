@@ -17,7 +17,8 @@ Page({
 
   gotoUser() {
     wx.showToast({
-      title:'功能暂未开放，敬请期待！'
+      title:'功能暂未开放，敬请期待！',
+      icon:'none'
     })
   },
 

@@ -22,7 +22,7 @@
             <image src="../../images/ua.png" mode="aspectFit" class="result_img" />
             <view class="result_item">尿酸</view>
         </view>
-        <view>
+        <view bindtap="gotoFlu">
             <image src="../../images/yingguang.png" mode="aspectFit" class="result_img" />
             <view class="result_item">免疫荧光</view>
         </view>

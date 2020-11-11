@@ -1,19 +1,7 @@
 <!--pages/setting/setting.wxml-->
 <view class="container">
- <view class="weui-cells">
-    <view class="weui-cell">
-      <view class='cell-icon'>
-        <!-- <image class='image-profile' wx:if="{{sex==1}}" mode="aspectFill" src="../../image/male.jpeg"/>
-        <image class='image-profile' wx:if="{{sex==0}}" mode="aspectFill" src="../../image/female.jpeg" /> -->
-      </view>
-      <view class="cell-text">
-        <view class="title">{{patientName}}</view>
-        <view class="subtitle">{{patientid}}</view>
-      </view>
-    </view>
-  </view>
-
-    <view class="weui-cells__title" style='margin-top:100rpx;'></view>
+  <image mode="aspectFit" src="../../images/logo.png" class="logo" />
+    <view class="weui-cells__title" style='margin-top:40rpx;'></view>
     <view class="weui-cells weui-cells_after-title">
       <view bindtap="gotoUser" class="weui-cell weui-cell_input ">
         <view class="weui-cell" style="width:100%">

@@ -1,0 +1,13 @@
+<!--pages/flu/index/index.wxml-->
+<view class='container'>
+    <view class="title">免疫荧光蛋白历史记录</view>
+    <view class="subtitle">点击查看具体记录</view>
+    <block wx:for="{{flus.flu}}" wx:for-item="item" wx:key="index" wx:for-index="index">
+    <navigator class='record-item-history' url='../flu?flu={{item}}&date={{flus.date[index]}}&time={{flus.time[index]}}'>
+        <view class='history-date'>
+            <view class='history-day'>{{flus.date[index]}}</view>
+            <view class='history-time'>{{flus.time[index]}}</view>
+        </view>
+        </navigator>
+    </block>
+</view>

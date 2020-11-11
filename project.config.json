@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
@@ -91,6 +91,13 @@
 					"id": -1,
 					"name": "我的",
 					"pathName": "pages/setting/setting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/flu/index/index",
+					"pathName": "pages/flu/index/index",
 					"scene": null
 				}
 			]

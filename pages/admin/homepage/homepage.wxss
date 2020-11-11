@@ -1,1 +1,44 @@
 /* pages/admin/homepage/homepage.wxss */
+
+.record-item-history {
+    margin-top: 8px;
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.239216) 0px 1px 6px 1px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    padding-bottom: 10px;
+    width: 90%;
+    margin-left: 5%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+.baseInfo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.title {
+    font-size: 44rpx;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin-top: 30rpx;
+}
+
+.tipContainer {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.tip {
+    font-size: 44rpx;
+}

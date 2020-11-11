@@ -1,1 +1,8 @@
 /* pages/setting/setting.wxss */
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 40rpx;
+    display: flex;
+    align-self: center;
+}

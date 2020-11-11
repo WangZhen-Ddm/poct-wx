@@ -50,6 +50,7 @@ Page({
         if(res.statusCode==200) {
           wx.setStorageSync("token", res.header.Authorization);
           wx.setStorageSync("patientID", username);
+          wx.setStorageSync("username", username);
           wx.setStorageSync("password", password);
           wx.setStorageSync("role", 1);//权限,1-患者，2-医生
           wx.switchTab({
@@ -67,12 +68,9 @@ Page({
   },
 
   gotoAdmin() {
-    wx.showToast({
-      title: '功能暂未开放！',
-      icon: 'none',
-      duration: 1500,
+    wx.navigateTo({
+      url: '../admin/index/index',
     });
-      
   },
 
 
@@ -92,17 +90,55 @@ Page({
         app.globalData.windowHeight = res.windowHeight;
       }
     });
+    var username = wx.getStorageSync("username");
+    var password = wx.getStorageSync("password");
+    this.setData({
+      username,
+      password,
+    });
     let role = wx.getStorageSync("role");
     if(role==1) {
-      var username = wx.getStorageSync("patientID");
-      var password = wx.getStorageSync("password");
-      this.setData({
-        username,
-        password,
-      });
       if(username) {
         this.login();
       }
+    } else if(role==2) {
+      this.adminLogin();
+    }
+  },
+
+  adminLogin() {
+    if (this.data.username.length <= 0) {
+      wx.showToast({
+        title: '请输入ID',
+        icon: 'none',
+        duration: 2000
+      });
+    } else {
+      const username = this.data.username;
+      const password = this.data.password;
+      const url = loginUrl;
+      let header = APPLICATION_JSON;
+      const data = {
+        username,
+        password,
+      }
+      request({url, data, header}).then(res=>{
+        if(res.statusCode==200) {
+          wx.setStorageSync("token", res.header.Authorization);
+          wx.setStorageSync("username", username);
+          wx.setStorageSync("password", password);
+          wx.setStorageSync("role", 2);//权限,1-患者，2-医生
+          wx.switchTab({
+            url:'../admin/homepage/homepage',
+          })
+        } else {
+          wx.showToast({
+            title: res.data.message,
+            icon: 'none',
+            duration: 1500,
+          })
+        }
+      })
     }
   },
 

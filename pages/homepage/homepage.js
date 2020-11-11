@@ -39,11 +39,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const patientID = wx.getStorageSync("patientID");
-    this.setData({
-      patientID,
-    })
-    this.getPatientInfo(patientID);
   },
 
   gotoUserinfo() {
@@ -65,6 +60,12 @@ Page({
     })
   },
 
+  gotoFlu() {
+    wx.navigateTo({
+      url: '../flu/index/index?patientID=' + this.data.patientID + '&&sex=' + this.data.userinfo.sex,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -76,7 +77,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const patientID = wx.getStorageSync("patientID");
+    this.setData({
+      patientID,
+    })
+    this.getPatientInfo(patientID);
   },
 
   /**

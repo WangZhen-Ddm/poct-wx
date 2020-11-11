@@ -1,2 +1,17 @@
 <!--pages/admin/homepage/homepage.wxml-->
-<text>pages/admin/homepage/homepage.wxml</text>
+<view class='container'>
+    <view class="tipContainer" wx:if="{{!hasRole}}">
+        <view class="tip">该功能仅对管理员开放!</view>
+    </view>
+    <block wx:else> 
+        <view class="title">患者列表，点击查看详情</view>
+        <view wx:for="{{patientList}}" bindtap="gotoPatient" data-patient="{{item.patientID}}" wx:for-item="item" wx:key="index" class='record-item-history'>
+            <view class="baseInfo">
+                <view>姓名:{{item.name}}</view>
+                <view>年龄:{{item.age}}岁</view>
+                <view>性别:{{item.sex}}</view>
+            </view>
+            <view class="">患者ID:{{item.patientID}}</view>
+        </view>
+    </block>
+</view>
