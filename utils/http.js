@@ -50,7 +50,9 @@ export const tokenRequest = ({
         success: res => {
           // 判断服务器返回状态，辅助debug
           const { statusCode } = res;
-          if (statusCode > 400 && statusCode < 500) {
+          if(statusCode == 401 && message == "token非法或已过期，请重新登录获取！") {
+            reLogin();
+          } else if (statusCode > 400 && statusCode < 500) {
             wx.showToast({
               title: '端口请求错啦' + statusCode,
               icon: 'none'

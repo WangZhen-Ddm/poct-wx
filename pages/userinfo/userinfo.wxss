@@ -1,19 +1,34 @@
 /* pages/userinfo/userinfo.wxss */
 .title {
-    font-size: 56rpx;
+    font-size: 50rpx;
     font-weight: bold;
     margin-left: 80rpx;
     margin-top: 60rpx;
 }
 
 .item {
-    margin-top: 60rpx;
-    font-weight: lighter;
-    font-size: 30rpx;
-    margin-left: 80rpx;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin-left: 5%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.item-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .detail {
     margin-left: 80rpx;
     font-size: 44rpx;
+}
+
+.img {
+    height: 60rpx;
+    width: 60rpx;
 }

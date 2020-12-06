@@ -1,0 +1,13 @@
+<!--pages/dm/input/input.wxml-->
+<top-bar tabbarData="{{tabbarData}}" content="{{content}}" bind:swiper="getIndex"/>
+<view class="input">
+    <image src="../../../images/dm-input.jpg" class="dm-input" mode="aspectFit" />
+    <input bindinput="inputDm" class="value" value="{{dm}}" />
+    <view class="add">
+        <image src="../../../images/input.jpg" mode="aspectFit" />
+        <view>mmol/L</view>
+    </view>
+</view>
+<view class="time">{{time}}</view>
+
+<button type="primary" class="save" bindtap="commitRecord">保存</button>

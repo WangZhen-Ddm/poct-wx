@@ -1,0 +1,115 @@
+/* pages/ua/ua/ua.wxss */
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.top {
+    height: 290rpx;
+    margin-top: 60rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.target-img {
+    height: 100rpx;
+    width: 100rpx;
+    position: absolute;
+    display: flex;
+    justify-self: flex-start;
+}
+
+.target {
+    height: 200rpx;
+    width: 550rpx;
+    border: 1px dashed grey;
+    border-radius: 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    align-self: flex-end;
+}
+
+.target>view:first-child {
+    font-size: 56rpx;
+    color: red;
+    width: 180rpx;
+}
+
+.detail {
+    margin-top: 50rpx;
+}
+
+.dm-circle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dm-circle>image {
+    margin-top: 120rpx;
+    position: fixed;
+    height: 280rpx;
+    width: 420rpx;
+    z-index: -1;
+    align-self: center;
+}
+
+.detail-info {
+    margin-top: 64rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.big {
+    font-size: 50rpx;
+    font-weight: bold;
+}
+
+.small {
+    font-size: 28rpx;
+}
+
+.add-img {
+    margin-top: 26rpx;
+    height: 60rpx;
+}
+
+.history {
+    margin-top: 40rpx;
+    border: 2px solid grey;
+    border-radius: 40rpx;
+    width: 88%;
+    display: flex;
+    flex-direction: row;
+    height: 180rpx;
+    justify-content: center;
+    align-items: center;
+}
+
+.history>image {
+    height: 160rpx;
+    width: 160rpx;
+}
+
+.history>view {
+    font-size: 40rpx;
+    margin-left: 20rpx;
+}
+
+.kno {
+    width: 88%;
+    margin-top: 20rpx;
+    border: 2px solid grey;
+    border-radius: 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 340rpx;
+}

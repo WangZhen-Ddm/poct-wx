@@ -44,7 +44,7 @@
 .result_title {
     font-size: 44rpx;
     font-weight: bold;
-    margin-top: 280rpx;
+    margin-top: 28rpx;
     margin-left: 40rpx;
 }
 
@@ -94,4 +94,17 @@
 .about_img {
     height: 200rpx;
     width: 200rpx;
+}
+
+.tip {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.tip>image {
+    height: 60px;
+    width: 60px;
 }

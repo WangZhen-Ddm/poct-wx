@@ -1,14 +1,124 @@
 <!--pages/userinfo/userinfo.wxml-->
 <view class="container">
     <view class="title">患者基本信息</view>
-    <view class="item">姓名/性别/年龄</view>
-    <view class="detail">{{userinfo.name}}|{{userinfo.sex}}|{{userinfo.age}}</view>
-    <view class="item">患者ID号码</view>
-    <view class="detail">{{userinfo.patientID}}</view>
-    <view class="item">身高（cm）|体重（kg）</view>
-    <view class="detail">{{userinfo.height}}|{{userinfo.weight}}</view>
-    <view class="item">证件号码</view>
-    <view class="detail">{{userinfo.identityCardNumber}}</view>
-    <view class="item">手机号码</view>
-    <view class="detail">{{userinfo.phoneNumber}}</view>
+    <view class="item" style="margin-top: 20px;">
+        <view class="item-left">
+            <image src="../../images/name.jpg" class="img" />
+            <view style="margin-left: 10px;">姓名</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.name||"未填写"}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/sex.jpg" class="img" />
+            <view style="margin-left: 10px;">性别</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.sex||"未填写"}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/age.jpg" class="img" />
+            <view style="margin-left: 10px;">年龄</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.age}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/ID.jpg" class="img" />
+            <view style="margin-left: 10px;">患者ID号码</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.patientID||"未填写"}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/height.jpg" class="img" />
+            <view style="margin-left: 10px;">身高(cm)</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.height||"未填写"}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/weight.jpg" class="img" />
+            <view style="margin-left: 10px;">体重(kg)</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.weight}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/sports.jpg" class="img" />
+            <view style="margin-left: 10px;">体力活动</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.sports||"未填写"}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/dmtype.jpg" class="img" />
+            <view style="margin-left: 10px;">糖尿病类型</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.dmType||"未填写"}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/tongfeng.jpg" class="img" />
+            <view style="margin-left: 10px;">痛风类型</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.goutType||"未填写"}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/binfazheng.jpg" class="img" />
+            <view style="margin-left: 10px;">并发症</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.illnessHistory||"未填写"}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/idcard.jpg" class="img" />
+            <view style="margin-left: 10px;">证件号码</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.idCard||"未填写"}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-left">
+            <image src="../../images/phone.jpg" class="img" />
+            <view style="margin-left: 10px;">手机号码</view>
+        </view>
+        <view class="item-left">
+            <view style="margin-right: 10px;">{{userinfo.phoneNumber||"未填写"}}</view>
+            <image mode="aspectFit" src="../../images/right.png" style="height:24rpx;width:16rpx;" />
+        </view>
+    </view>
 </view>

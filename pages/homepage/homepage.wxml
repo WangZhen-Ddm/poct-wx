@@ -11,10 +11,14 @@
     </view>
     <image src="../../images/homepage_basic.png" mode="aspectFit" class="basic" />
     <view bindtap="gotoUserinfo" class="show_info" hover-class='wsui-btn__hover_list' hover-stay-time="3000">查看个人信息</view>
-    <image src="../../images/test_png.png" mode="aspectFit" class="basic test" />
+    <view class="tip">
+        <image src="../../images/doctor.jpg" />
+        <view style="margin-left:16rpx; width:250px;" wx:if="{{!hasRole}}">医生给你留言：<view>{{message.detail||"暂无留言！"}}</view></view>
+        <view style="margin-left:16rpx; width:250px;" wx:else>给他留言：<input value="{{detail}}" bindinput="messageInput" placeholder="请留言，例如：多运动" /><view style="color: blue" bindtap="giveMessage">确认</view></view>
+    </view>
     <view class="result_title">检测指标结果查询</view>
     <view class="result_box">
-        <view>
+        <view bindtap="gotoDm">
             <image src="../../images/glu.png" mode="aspectFit" class="result_img" />
             <view class="result_item">血糖</view>
         </view>
@@ -23,8 +27,8 @@
             <view class="result_item">尿酸</view>
         </view>
         <view bindtap="gotoFlu">
-            <image src="../../images/yingguang.png" mode="aspectFit" class="result_img" />
-            <view class="result_item">免疫荧光</view>
+            <image src="../../images/yingguang.jpg" mode="aspectFit" class="result_img" />
+            <view class="result_item">尿白蛋白</view>
         </view>
     </view>
     <view class="about_title">

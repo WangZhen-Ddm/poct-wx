@@ -1,0 +1,11 @@
+var filters = {
+    //百分比数据
+      Percentage: function(number1,number2){
+        if(number1 == 0 || number2 == 0) return 0+"%";
+        return (Math.round(number1/(number2)*1000)/10.0+"%")
+    }
+  }
+
+  module.exports = {
+    Percentage: filters.Percentage
+  }

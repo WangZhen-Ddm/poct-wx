@@ -1,6 +1,7 @@
 // pages/flu/flu.js
 import * as echarts from '../../components/ec-canvas/echarts.min';
-var lineChart = null;
+import { getFluTipsUrl } from '../../utils/config';
+import { tokenRequest } from '../../utils/http';
 var app = getApp();
 Page({
 
@@ -111,6 +112,23 @@ Page({
     return flus
   },
 
+  getTips() {
+    const url = getFluTipsUrl;
+    const that = this;
+    const data = {
+      patientID: this.data.patientID,
+      up: this.data.up,
+    }
+    tokenRequest({url, data}).then(res=>{
+      if(res.data.success) {
+        let data = res.data.result;
+        that.setData({
+          tips: data
+        })
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -119,12 +137,16 @@ Page({
       flu: options.flu,
       date: options.date,
       time: options.time,
+      up: options.up,
       windowWidth: app.globalData.windowWidth,
       windowHeight: app.globalData.windowHeight,
+      patientID: options.patientID,
     });
     this.ecComponent = this.selectComponent('#mychart-dom-bar');
     this.init();
   },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -137,7 +159,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getTips();
   },
 
   /**

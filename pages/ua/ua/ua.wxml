@@ -1,0 +1,32 @@
+<!--pages/ua/ua/ua.wxml-->
+<view class="container">
+    <view class="top">
+        <image src="../../../images/target.jpg" class="target-img" />
+        <view class="target">
+            <view >尿 酸目 标</view>
+            <view style="font-size:18px">
+                <view >男性149-416umol/L</view>
+                <view >女性89-357umol/L</view>
+            </view>
+        </view>
+    </view>
+    <view class="detail">
+        <view class="dm-circle">
+            <image src="../../../images/dmcircle.jpg" />
+        </view>
+        <view class="detail-info">
+            <view class="small">{{time}}</view>
+            <view class="small">尿酸值</view>
+            <view class="big">{{ua}}</view>
+            <view class="small">umol/L</view>
+        </view>
+    </view>
+    <image src="../../../images/add-ua.jpg" class="add-img" mode="aspectFit" bindtap="gotoInput" />
+    <view class="history" bindtap="gotoHistory">
+        <image src="../../../images/history.jpg" mode="aspectFit" />
+        <view>历史数据及统计</view>
+    </view>
+    <view class="kno">
+        <view >个性化知识</view>
+    </view>
+</view>

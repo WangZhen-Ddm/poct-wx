@@ -1,0 +1,34 @@
+<!--pages/dm/dm/dm.wxml-->
+<view class="container">
+    <view class="top">
+        <image src="../../../images/target.jpg" class="target-img" />
+        <view class="target">
+            <view >控 糖目 标</view>
+            <view >
+                <view >空腹4.4-6.1mmol/L</view>
+                <view >餐前4.4-6.1mmol/L</view>
+                <view >餐后4.4-7.8mmol/L</view>
+                <view >随机4.4-10mmol/L</view>
+            </view>
+        </view>
+    </view>
+    <view class="detail">
+        <view class="dm-circle">
+            <image src="../../../images/dmcircle.jpg" />
+        </view>
+        <view class="detail-info">
+            <view class="small">{{time}}</view>
+            <view class="small">血糖值</view>
+            <view class="big">{{dm}}</view>
+            <view class="small">mmol/L</view>
+        </view>
+    </view>
+    <image src="../../../images/add.jpg" class="add-img" mode="aspectFit" bindtap="gotoInput" />
+    <view class="history" bindtap="gotoHistory">
+        <image src="../../../images/history.jpg" mode="aspectFit" />
+        <view>历史数据及统计</view>
+    </view>
+    <view class="kno">
+        <view >个性化知识</view>
+    </view>
+</view>

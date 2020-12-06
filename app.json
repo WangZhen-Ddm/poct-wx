@@ -12,7 +12,14 @@
     "pages/ua/ua",
     "pages/ua/index/index",
     "pages/flu/index/index",
-    "pages/flu/flu"
+    "pages/flu/flu",
+    "pages/class/class",
+    "pages/dm/dm/dm",
+    "pages/dm/input/input",
+    "pages/dm/history/history",
+    "pages/ua/ua/ua",
+    "pages/ua/history/history",
+    "pages/ua/input/input"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,19 +33,19 @@
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "images/homepage_fill.png",
+        "selectedIconPath": "images/homepage-fill.png",
         "iconPath": "images/homepage.png",
         "pagePath": "pages/homepage/homepage",
         "text": "首页"
       },
       {
-        "selectedIconPath": "images/homepage_fill.png",
-        "iconPath": "images/homepage.png",
+        "selectedIconPath": "images/admin-fill.png",
+        "iconPath": "images/admin.png",
         "pagePath": "pages/admin/homepage/homepage",
         "text": "管理员"
       },
       {
-        "selectedIconPath": "images/mine_fill.png",
+        "selectedIconPath": "images/mine-fill.png",
         "iconPath": "images/mine.png",
         "pagePath": "pages/setting/setting",
         "text": "我的"

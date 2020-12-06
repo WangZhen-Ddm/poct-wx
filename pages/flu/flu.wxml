@@ -1,5 +1,13 @@
 <!--pages/flu/flu.wxml-->
-<view style="height:100vh;width:100vw;display:flex;justify-content:center;">
-  <ec-canvas style="width:{{windowHeight}}px;height:{{windowWidth*0.95}}px;" id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
-<!--canvas canvas-id="lineCanvas" disable-scroll="true" style="width:{{windowHeight}}px;height:{{windowWidth*0.8}}px;display: flex;align-self: center;justify-self: center;" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas-->
+<view style="height:50vh;width:100vw;display:flex;justify-content:center;">
+  <ec-canvas style="width:{{windowWidth}}px;height:{{windowHeight*0.5}}px;" id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
 </view>
+<view class="gap"/>
+  <view class="advice-title">建议</view>
+  <view class="advice">
+      <view class="tip">以下内容基于您在平台内最近一段时间的尿蛋白数据，为您专属定制，仅供参考，请遵医嘱。</view>
+      <block wx:for="{{tips}}">
+          <view class="content" >{{index+1}}、{{item.tip}}</view>
+      </block>
+      <image src="../../images/doctor-body.jpg" class="doctor-body" mode="aspectFit" />
+  </view>

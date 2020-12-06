@@ -1,0 +1,99 @@
+/* pages/ua/history/history.wxss */
+.history-day{
+    font: 40rpx bold ;
+    color: gray;
+  }
+  .history-time{
+    font-size: 46rpx;
+    color: gray;
+  }
+
+  .record-item-history {
+    margin-top: 8px;
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.239216) 0px 1px 6px 1px;
+    margin-bottom: 8px;
+    margin-top: 18px;
+    width: 80%;
+    margin-left: 10%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .history-date {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.title {
+  font-weight: bold;
+  font-size: 30rpx;
+  width: 80%;
+  margin-left: 10%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid gainsboro;
+}
+
+.static {
+  height: 300rpx;
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid gainsboro;
+  flex-direction: row;
+}
+
+.times {
+  margin-left: 100rpx;
+}
+
+.advice-title {
+  font-size: 20px;
+  text-align: center;
+  width: 20%;
+  margin-left: 40%;
+  margin-top: 10px;
+  background-color: #B2DEF7;
+  border-radius: 12px;
+}
+
+.advice {
+  margin-top: 5px;
+  width: 86%;
+  margin-left: 7%;
+  border: 4px solid gainsboro;
+  border-radius: 20px;
+}
+
+.tip {
+  margin: 8px;
+  font-size: 14px;
+  border: 2px solid gainsboro;
+  border-radius: 10px;
+  box-shadow:0 2rpx 3rpx 1rpx #4e4e4e99;
+}
+
+.content {
+  text-indent: 60rpx;
+  padding: 10rpx;
+}
+
+.doctor-body {
+  height: 130rpx;
+}
+
+.gap {
+  height: 20rpx;
+  margin-top: 10rpx;
+  width: 80%;
+  margin-left: 10%;
+  background-color: gray;
+}

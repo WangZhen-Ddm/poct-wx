@@ -26,14 +26,16 @@ Page({
     var flus = {
       date: [],
       time: [],
-      flu: []
+      flu: [],
+      up: [],
     }
     tokenRequest({url, data}).then(res=>{
       let r = res.data.result;
       r.map(function(item) {
         flus.date.push(item.measureDateTime.split(" ")[0]);
         flus.time.push(item.measureDateTime.split(" ")[1]);
-        flus.flu.push(item.fluorescent)
+        flus.flu.push(item.fluorescent);
+        flus.up.push(item.up)
       })
       that.setData({
         flus,

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "top-bar": "/components/top-tabbar/top-tabbar",
+    "ec-canvas": "/components/ec-canvas/ec-canvas"
+  }
+}

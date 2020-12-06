@@ -8,51 +8,35 @@
     box-shadow: rgba(0, 0, 0, 0.239216) 0px 1px 2px 1px;
   }
 
+  .history-day{
+    font: 40rpx bold ;
+    color: gray;
+  }
+  .history-time{
+    font-size: 46rpx;
+    color: gray;
+  }
+
   .record-item-history {
     margin-top: 8px;
     border-radius: 6px;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.239216) 0px 1px 6px 1px;
     margin-bottom: 8px;
-    margin-top: 8px;
-    padding-bottom: 10px;
-    width: 90%;
-    margin-left: 5%;
+    margin-top: 18px;
+    width: 80%;
+    margin-left: 10%;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-around;
   }
-  
+
   .history-date {
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .history-data {
-    font:54rpx bolder;
-    color: #188df0;
-  }
-  .normal{
-    color: #188df0;
-  }
-  .warn{
-    color: #FF4500;
-  }
-  .history-unit {
-    font: 3pt;
-    color: lightblue;
-   
-  }
-  .history-day{
-    font: 44rpx bold ;
-    color: gray;
-  }
-  .history-time{
-    font: 34rpx;
-    color: gray;
   }
   
 .title {

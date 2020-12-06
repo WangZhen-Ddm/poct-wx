@@ -1,0 +1,12 @@
+<!--pages/ua/input/input.wxml-->
+<view class="input">
+    <image src="../../../images/dm-input.jpg" class="dm-input" mode="aspectFit" />
+    <input bindinput="inputUa" class="value" value="{{ua}}" />
+    <view class="add">
+        <image src="../../../images/input.jpg" mode="aspectFit" />
+        <view>umol/L</view>
+    </view>
+</view>
+<view class="time">{{time}}</view>
+
+<button type="primary" class="save" bindtap="commitRecord">保存</button>

@@ -1,0 +1,49 @@
+<!--pages/ua/history/history.wxml-->
+<!--pages/dm/history/history.wxml-->
+<wxs module="filters" src="../../../utils/util.wxs" />
+<top-bar tabbarData="{{tabbarData}}" content="{{content}}" bind:swiper="getIndex"> 
+    <view slot="toptab0">
+        <view class='record-item-history' wx:for="{{uas}}" wx:key="index">
+            <view class='history-date'>
+                <view class='history-day'>{{uas[index].date}}</view>
+                <view class='history-time'>{{uas[index].time}}</view>
+            </view>
+            <view class="history-data" style="{{uas[index].uricAcid>uaGoal ? 'color:red':''}}">{{uas[index].uricAcid}}mmol/L</view>
+        </view>
+    </view>
+    <view slot="toptab1">
+        <canvas canvas-id="lineCanvas" disable-scroll="true" style="width:{{windowWidth}}px;height:{{windowHeight}}px;" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>
+    </view>
+    <view slot="toptab2" style="height: 950px">
+        <view class="title">最近一周尿酸</view>
+        <view class="title" style="font-weight: normal; font-size: 26rpx">平均尿酸：<text style="color: #00B58C; font-size: 40rpx;">{{weekUaData.average}}</text>umol/L</view>
+        <view class="static">
+            <ec-canvas style="height: 250rpx; width: 250rpx" id="mychart-dom-bar1" canvas-id="mychart-bar" ec="{{ ec1 }}" />
+            <view class="times">
+                <view style="color: #00B58C">正常：{{weekUaData.normal}}次 {{filters.Percentage(weekUaData.normal, weekUaData.times)}}</view>
+                <view style="color: #F17E91">偏高：{{weekUaData.high}}次 {{filters.Percentage(weekUaData.high, weekUaData.times)}}</view>
+                <view style="color: #D9BB80">偏低：{{weekUaData.low}}次 {{filters.Percentage(weekUaData.low, weekUaData.times)}}</view>
+            </view>
+        </view>
+        <view class="gap"/>
+        <view class="title">最近一月尿酸</view>
+        <view class="title" style="font-weight: normal; font-size: 26rpx">平均尿酸：<text style="color: #00B58C; font-size: 40rpx;">{{monthUaData.average}}</text>umol/L</view>
+        <view class="static">
+            <ec-canvas style="height: 250rpx; width: 250rpx" id="mychart-dom-bar4" canvas-id="mychart-bar" ec="{{ ec4 }}" />
+            <view class="times">
+                <view style="color: #00B58C">正常：{{monthUaData.normal}}次 {{filters.Percentage(monthUaData.normal, monthUaData.times)}}</view>
+                <view style="color: #F17E91">偏高：{{monthUaData.high}}次 {{filters.Percentage(monthUaData.high, monthUaData.times)}}</view>
+                <view style="color: #D9BB80">偏低：{{monthUaData.low}}次 {{filters.Percentage(monthUaData.low, monthUaData.times)}}</view>
+            </view>
+        </view>
+        <view class="gap"/>
+        <view class="advice-title">建议</view>
+        <view class="advice">
+            <view class="tip">以下内容基于您在平台内最近一段时间的尿酸数据，为您专属定制，仅供参考，请遵医嘱。</view>
+            <block wx:for="{{monthUaData.tips}}">
+                <view class="content" >{{index+1}}、{{item.tip}}</view>
+            </block>
+            <image src="../../../images/doctor-body.jpg" class="doctor-body" mode="aspectFit" />
+        </view>
+    </view>
+</top-bar>

@@ -1,1 +1,43 @@
 /* pages/flu/flu.wxss */
+.advice-title {
+    font-size: 20px;
+    text-align: center;
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 10px;
+    background-color: #B2DEF7;
+    border-radius: 12px;
+  }
+  
+  .advice {
+    margin-top: 5px;
+    width: 86%;
+    margin-left: 7%;
+    border: 4px solid gainsboro;
+    border-radius: 20px;
+  }
+  
+  .tip {
+    margin: 8px;
+    font-size: 14px;
+    border: 2px solid gainsboro;
+    border-radius: 10px;
+    box-shadow:0 2rpx 3rpx 1rpx #4e4e4e99;
+  }
+  
+  .content {
+    text-indent: 60rpx;
+    padding: 10rpx;
+  }
+
+  .gap {
+    height: 20rpx;
+    margin-top: 10rpx;
+    width: 80%;
+    margin-left: 10%;
+    background-color: gray;
+  }
+
+  .doctor-body {
+    height: 130rpx;
+  }

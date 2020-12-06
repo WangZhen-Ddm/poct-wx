@@ -98,6 +98,42 @@
 					"id": -1,
 					"name": "pages/flu/index/index",
 					"pathName": "pages/flu/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/dm/dm/dm",
+					"pathName": "pages/dm/dm/dm",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/dm/input/input",
+					"pathName": "pages/dm/input/input",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "pages/dm/history/history",
+					"pathName": "pages/dm/history/history",
+					"query": "patientID=100&&sex=\"男\"",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ua/ua/ua",
+					"pathName": "pages/ua/ua/ua",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "pages/ua/history/history",
+					"pathName": "pages/ua/history/history",
+					"query": "patientID=100&&sex=\"男\"",
 					"scene": null
 				}
 			]
