@@ -1,23 +1,24 @@
 <!--pages/dm/history/history.wxml-->
 <wxs module="filters" src="../../../utils/util.wxs" />
-<top-bar tabbarData="{{tabbarData}}" content="{{content}}" bind:swiper="getIndex"> 
-    <view slot="toptab0">
-        <view class='record-item-history' wx:for="{{dm}}" wx:key="index">
+<top-bar tabbarData="{{tabbarData}}" content="{{content}}" bind:click="getIndex"/> 
+    <view wx:if="{{index==0}}">
+        <navigator class='record-item-history' wx:for="{{dm}}" wx:key="index" url="../detail/detail?patientID={{patientID}}&&dm={{dm[index].dm}}&&timePoint={{dm[index].timePoint}}&&date={{dm[index].date}}&&time={{dm[index].time}}">
             <view class='history-date'>
                 <view class='history-day'>{{dm[index].date}}</view>
                 <view class='history-time'>{{dm[index].time}}</view>
             </view>
             <view class="history-data" style="{{dm[index].dm>14 ? 'color:red':''}}">{{dm[index].dm}}mmol/L</view>
-        </view>
+        </navigator>
     </view>
-    <view slot="toptab1">
-        <canvas canvas-id="lineCanvas" disable-scroll="true" style="width:{{windowWidth}}px;height:{{windowHeight}}px;" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>
+    <view wx:elif="{{index==1}}">
+        <top-bar tabbarData="{{timePointArr}}" content="{{content2}}" bind:click="getTimePoint"/>
+        <canvas canvas-id="lineCanvas" disable-scroll="true" style="width:{{windowWidth}}px;height:{{windowHeight*0.8}}px; margin-top: 140rpx;" bindtouchstart="touchHandler" bindtouchmove="moveHandler" bindtouchend="touchEndHandler"></canvas>
     </view>
-    <view slot="toptab2" style="height: 1350px">
+    <view wx:elif="{{index==2}}" style="height: 1350px">
         <view class="title">最近一周血糖</view>
         <view class="title" style="font-weight: normal; font-size: 26rpx">平均血糖：<text style="color: #00B58C; font-size: 40rpx;">{{weekDmData.average}}</text>mmol/L</view>
         <view class="static">
-            <ec-canvas style="height: 250rpx; width: 250rpx" id="mychart-dom-bar1" canvas-id="mychart-bar" ec="{{ ec1 }}" />
+            <ec-canvas style="height: 250rpx; width: 250rpx" id="mychart-dom-bar1" canvas-id="mychart-bar" ec="{{ ec1 }}"  force-use-old-canvas="true" />
             <view class="times">
                 <view style="color: #00B58C">正常：{{weekDmData.normal}}次 {{filters.Percentage(weekDmData.normal, weekDmData.times)}}</view>
                 <view style="color: #F17E91">偏高：{{weekDmData.high}}次 {{filters.Percentage(weekDmData.high, weekDmData.times)}}</view>
@@ -25,14 +26,14 @@
             </view>
         </view>
         <view class="static" style="height:400rpx">
-            <ec-canvas style="height: 350rpx; width: 50%" id="mychart-dom-bar2" canvas-id="mychart-bar" ec="{{ ec2 }}" />
-            <ec-canvas style="height: 350rpx; width: 50%" id="mychart-dom-bar3" canvas-id="mychart-bar" ec="{{ ec3 }}" />
+            <ec-canvas style="height: 350rpx; width: 50%" id="mychart-dom-bar2" canvas-id="mychart-bar" ec="{{ ec2 }}"  force-use-old-canvas="true" />
+            <ec-canvas style="height: 350rpx; width: 50%" id="mychart-dom-bar3" canvas-id="mychart-bar" ec="{{ ec3 }}"  force-use-old-canvas="true" />
         </view>
         <view class="gap"/>
         <view class="title">最近一月血糖</view>
         <view class="title" style="font-weight: normal; font-size: 26rpx">平均血糖：<text style="color: #00B58C; font-size: 40rpx;">{{monthDmData.average}}</text>mmol/L</view>
         <view class="static">
-            <ec-canvas style="height: 250rpx; width: 250rpx" id="mychart-dom-bar4" canvas-id="mychart-bar" ec="{{ ec4 }}" />
+            <ec-canvas style="height: 250rpx; width: 250rpx" id="mychart-dom-bar4" canvas-id="mychart-bar" ec="{{ ec4 }}"  force-use-old-canvas="true" />
             <view class="times">
                 <view style="color: #00B58C">正常：{{monthDmData.normal}}次 {{filters.Percentage(monthDmData.normal, monthDmData.times)}}</view>
                 <view style="color: #F17E91">偏高：{{monthDmData.high}}次 {{filters.Percentage(monthDmData.high, monthDmData.times)}}</view>
@@ -40,8 +41,8 @@
             </view>
         </view>
         <view class="static" style="height:400rpx">
-            <ec-canvas style="height: 350rpx; width: 50%" id="mychart-dom-bar5" canvas-id="mychart-bar" ec="{{ ec5 }}" />
-            <ec-canvas style="height: 350rpx; width: 50%" id="mychart-dom-bar6" canvas-id="mychart-bar" ec="{{ ec6 }}" />
+            <ec-canvas style="height: 350rpx; width: 50%" id="mychart-dom-bar5" canvas-id="mychart-bar" ec="{{ ec5 }}"  force-use-old-canvas="true" />
+            <ec-canvas style="height: 350rpx; width: 50%" id="mychart-dom-bar6" canvas-id="mychart-bar" ec="{{ ec6 }}"  force-use-old-canvas="true" />
         </view>
         <view class="gap"/>
         <view class="advice-title">建议</view>
@@ -55,7 +56,7 @@
         </view>
         <view class="risk" wx:if="{{testResult!=''}}">经过智能评估，您的糖尿病风险为：<text style="{{testResult=='高风险'?'color: #F17E91': '#D9BB80'}}">{{testResult}}</text></view>
     </view>
-</top-bar>
+
 
 <!--弹窗-->
 <view class="modal-mask" style='z-index: 90;' bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{testShow}}"></view>

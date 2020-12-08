@@ -1,4 +1,4 @@
-const { getWeekDmUrl, getWeekDmReportUrl, getMonthDmReportUrl, getOgttTestResultUrl, APPLICATION_JSON } = require("../../../utils/config");
+const { getWeekDmUrl, getWeekDmReportUrl, getMonthDmReportUrl, getOgttTestResultUrl, APPLICATION_JSON, getDmByTimePointUrl } = require("../../../utils/config");
 const { tokenRequest } = require("../../../utils/http");
 const { formatTime6 } = require("../../../utils/util");
 var wxCharts = require('../../../utils/wxcharts.js');
@@ -16,7 +16,11 @@ Page({
     tabbarData: {
       tabs: ["日志","曲线","统计"]
     },
-    content: true,
+    timePointArr: {
+      tabs: ["空腹","餐前","餐后","随机"]
+    },
+    content: false,
+    content2: false,
     ec1: {
       lazyLoad: true,
     },
@@ -38,6 +42,8 @@ Page({
     testShow: false,
     ogtt: 0,
     testResult: "",
+    activeTimePoint: 0,
+    index: 0,
   },
 
   getWeekDm() {
@@ -61,6 +67,31 @@ Page({
     })
   },
 
+  getTimePoint(e) {
+    this.setData({
+      activeTimePoint: e.detail
+    })
+    this.getDmByTimePoint(e.detail)
+  },
+
+  getDmByTimePoint(timePoint) {
+    const url = getDmByTimePointUrl;
+    const that = this;
+    const data = {
+      patientID: this.data.patientID,
+      timePoint,
+    }
+    tokenRequest({url, data}).then(res=>{
+      if(res.data.success) {
+        let result = res.data.result;
+        that.setData({
+          dms: result
+        })
+        this.drawlinechart();
+      }
+    })
+  },
+
   createData: function () {
     var that = this;
     var chartsdate = {
@@ -68,7 +99,7 @@ Page({
       dm: [],
       dmColor: [],
     };
-    var dms = (this.data.dm);
+    var dms = (this.data.dms);
     if (dms.length > 14) {
       that.setData({
         enableScroll: true
@@ -113,7 +144,7 @@ Page({
         min: 0,
       },
       width: this.data.windowWidth,
-      height: this.data.windowHeight*0.95,
+      height: this.data.windowHeight*0.75,
       dataLabel: true,
       dataPointShape: true,
       enableScroll: this.data.enableScroll,
@@ -136,12 +167,12 @@ Page({
 
   getIndex(e) {
     this.setData({
-      timeIndex: e.detail,
+      index: e.detail,
     })
     if(e.detail==0) {
       this.getWeekDm();
     } else if(e.detail==1) {
-      this.drawlinechart();
+      this.getDmByTimePoint(this.data.activeTimePoint)
     } else if(e.detail==2) {
       this.getWeekDmReport();
     }
@@ -208,7 +239,7 @@ Page({
   },
 
   setOption2: function (chart) {
-    let max = this.data.weekDmData.max, min = this.data.weekDmData.min;
+    let max = this.data.weekDmData.max.toFixed(1), min = this.data.weekDmData.min.toFixed(1);
     var option = {
       color:[ '#00B58C'],
       grid: {
@@ -240,7 +271,7 @@ Page({
           {
               name: '预警次数',
               type: 'bar',
-              data: [max, min],
+              data: [min, max],
               label:{
                   show:true,
                   color:"black",
@@ -276,8 +307,6 @@ Page({
 
   setOption3: function (chart) {
     let averages = this.data.weekDmData.averageTimePoints
-    console.log(averages)
-    console.log(averages[0])
     var option = {
       color:[ '#00B58C'],
       grid: {
@@ -402,7 +431,7 @@ Page({
   },
 
   setOption5: function (chart) {
-    let max = this.data.monthDmData.max, min = this.data.monthDmData.min;
+    let max = this.data.monthDmData.max.toFixed(1), min = this.data.monthDmData.min.toFixed(1);
     var option = {
       color:[ '#00B58C'],
       grid: {
@@ -434,7 +463,7 @@ Page({
           {
               name: '预警次数',
               type: 'bar',
-              data: [9.1, 5.4],
+              data: [min, max],
               label:{
                   show:true,
                   color:"black",

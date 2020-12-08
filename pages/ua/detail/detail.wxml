@@ -1,0 +1,19 @@
+<!--pages/ua/detail/detail.wxml-->
+<view class="dm-value">
+    <view class="value">{{ua}}</view>
+    <view class="add">
+        <image src="../../../images/input.jpg" mode="aspectFit" />
+        <view>umol/L</view>
+    </view>
+</view>
+<view class="time">{{date}} {{time}}</view>
+
+<view class="advice-title">建议</view>
+<view class="advice">
+    <view class="tip">以下内容基于您在平台内最近一段时间的血糖数据，为您专属定制，仅供参考，请遵医嘱。</view>
+    <block wx:for="{{tips}}">
+        <view class="content" >{{index+1}}、{{item.tip}}</view>
+    </block>
+    <view class="test" wx:if="{{test}}" bindtap="gotoTest">进行糖尿病风险智能评估</view>
+    <image src="../../../images/doctor-body.jpg" class="doctor-body" mode="aspectFit" />
+</view>

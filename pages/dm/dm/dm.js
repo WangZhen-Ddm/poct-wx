@@ -1,4 +1,4 @@
-const { getLatestDmUrl } = require("../../../utils/config");
+const { getLatestDmUrl, getKnoByTypeUrl } = require("../../../utils/config");
 const { tokenRequest } = require("../../../utils/http");
 
 // pages/dm/dm/dm.js
@@ -26,6 +26,22 @@ Page({
         that.setData({
           dm: data.dm,
           time: timeArr[1] + '月' + timeArr[2]
+        })
+      }
+    })
+  },
+
+  getKno() {
+    const url = getKnoByTypeUrl;
+    const that = this;
+    const data = {
+      type: 1,
+    }
+    tokenRequest({url, data}).then(res=>{
+      if(res.data.success) {
+        let data = res.data.result;
+        that.setData({
+          kno: data
         })
       }
     })
@@ -59,6 +75,12 @@ Page({
     })
   },
 
+  gotoKno() {
+    wx.navigateTo({
+      url: '../../kno/kno?knoID=' + this.data.kno.id
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -72,6 +94,7 @@ Page({
    */
   onShow: function () {
     this.getLatestDm();
+    this.getKno();
   },
 
   /**

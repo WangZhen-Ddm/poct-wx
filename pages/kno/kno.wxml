@@ -1,0 +1,13 @@
+<!--pages/kno/kno.wxml-->
+<import src="../../utils/wxParser/index.wxml" />
+<view class="contanier">
+<scroll-view scroll-y="{{true}}" style="height:90vh;background-color: white">
+    <view class="title">{{kno.title}}</view>
+    <view class="img">
+    <image src="{{kno.picUrl}}" mode="aspectFit" class="img" />
+    </view>
+    <view class="wxParser">
+        <template is="wxParser" data="{{wxParserData:richText.nodes}}" />
+    </view>
+  </scroll-view>
+</view>

@@ -6,10 +6,9 @@
 
 .top {
     height: 290rpx;
-    margin-top: 60rpx;
+    margin-top: 30rpx;
     width: 100%;
     display: flex;
-    justify-content: center;
 }
 
 .target-img {
@@ -17,12 +16,15 @@
     width: 100rpx;
     position: absolute;
     display: flex;
+    margin-left: 60rpx;
+    margin-top: 20rpx;
     justify-self: flex-start;
 }
 
 .target {
     height: 200rpx;
-    width: 550rpx;
+    width: 80%;
+    margin-left: 10%;
     border: 1px dashed grey;
     border-radius: 40rpx;
     display: flex;
@@ -34,7 +36,7 @@
 }
 
 .target>view:first-child {
-    font-size: 56rpx;
+    font-size: 60rpx;
     color: red;
     width: 180rpx;
 }
@@ -112,4 +114,13 @@
     justify-content: center;
     align-items: center;
     height: 340rpx;
+}
+
+.kno {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rpx;
+    padding-bottom: 20rpx;
 }

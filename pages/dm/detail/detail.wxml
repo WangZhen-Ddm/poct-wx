@@ -1,0 +1,37 @@
+<!--pages/dm/detail/detail.wxml-->
+<view class="dm-value">
+    <view class="timePoint">测量时间点为：{{timePointArr[timePoint]}}</view>
+    <view class="value">{{dm}}</view>
+    <view class="add">
+        <image src="../../../images/input.jpg" mode="aspectFit" />
+        <view>mmol/L</view>
+    </view>
+</view>
+<view class="time">{{date}} {{time}}</view>
+
+<view class="advice-title">建议</view>
+<view class="advice">
+    <view class="tip">以下内容基于您在平台内最近一段时间的血糖数据，为您专属定制，仅供参考，请遵医嘱。</view>
+    <block wx:for="{{tips}}">
+        <view class="content" >{{index+1}}、{{item.tip}}</view>
+    </block>
+    <view class="test" wx:if="{{test}}" bindtap="gotoTest">进行糖尿病风险智能评估</view>
+    <image src="../../../images/doctor-body.jpg" class="doctor-body" mode="aspectFit" />
+</view>
+<view class="risk" wx:if="{{testResult!=''}}">经过智能评估，您的糖尿病风险为：<text style="{{testResult=='高风险'?'color: #F17E91': '#D9BB80'}}">{{testResult}}</text></view>
+
+<!--弹窗-->
+<view class="modal-mask" style='z-index: 90;' bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{testShow}}"></view>
+<view class="modal-dialog" style='z-index: 99' wx:if="{{testShow}}">
+  <view class="modal-title">糖尿病智能风险评估</view>
+  <view class="modal-content">
+<view class='modal-input-title'>糖耐量：</view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text"  bindinput="bindModalInput" class="input" placeholder="请输入糖耐量测试结果"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">开始评估</view>
+  </view>
+</view>

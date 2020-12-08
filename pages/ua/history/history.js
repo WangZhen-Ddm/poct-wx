@@ -15,13 +15,14 @@ Page({
     tabbarData: {
       tabs: ["日志","曲线","统计"]
     },
-    content: true,
+    content: false,
     ec1: {
       lazyLoad: true,
     },
     ec4: {
       lazyLoad: true,
     },
+    index: 0,
   },
 
   getUricAcidRecordsByTimeGap() {
@@ -146,7 +147,7 @@ Page({
 
   getIndex(e) {
     this.setData({
-      timeIndex: e.detail,
+      index: e.detail,
     })
     if(e.detail==0) {
       this.getUricAcidRecordsByTimeGap();

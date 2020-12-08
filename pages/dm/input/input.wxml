@@ -1,5 +1,5 @@
 <!--pages/dm/input/input.wxml-->
-<top-bar tabbarData="{{tabbarData}}" content="{{content}}" bind:swiper="getIndex"/>
+<top-bar tabbarData="{{tabbarData}}" content="{{content}}" bind:click="getIndex"/>
 <view class="input">
     <image src="../../../images/dm-input.jpg" class="dm-input" mode="aspectFit" />
     <input bindinput="inputDm" class="value" value="{{dm}}" />

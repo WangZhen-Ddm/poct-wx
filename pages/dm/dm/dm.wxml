@@ -4,7 +4,7 @@
         <image src="../../../images/target.jpg" class="target-img" />
         <view class="target">
             <view >控 糖目 标</view>
-            <view >
+            <view style="font-size: 26rpx;">
                 <view >空腹4.4-6.1mmol/L</view>
                 <view >餐前4.4-6.1mmol/L</view>
                 <view >餐后4.4-7.8mmol/L</view>
@@ -28,7 +28,8 @@
         <image src="../../../images/history.jpg" mode="aspectFit" />
         <view>历史数据及统计</view>
     </view>
-    <view class="kno">
-        <view >个性化知识</view>
+    <view class="kno" bindtap="gotoKno">
+        <view class="kno-title">{{kno.title}}</view>
+        <image src="{{kno.picUrl}}" mode="aspectFit" class="kno-img"/>
     </view>
 </view>

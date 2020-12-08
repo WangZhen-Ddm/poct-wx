@@ -19,7 +19,10 @@
     "pages/dm/history/history",
     "pages/ua/ua/ua",
     "pages/ua/history/history",
-    "pages/ua/input/input"
+    "pages/ua/input/input",
+    "pages/dm/detail/detail",
+    "pages/ua/detail/detail",
+    "pages/kno/kno"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -26,6 +26,7 @@ Component({
       this.setData({
         activeIndex: parseInt(e.currentTarget.id)
       }) 
+      this.triggerEvent('click', e.currentTarget.id)
     },
     swiperChange: function(e){
       this.setData({
